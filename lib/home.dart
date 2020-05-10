@@ -16,24 +16,27 @@ class _HomeState extends State<Home> {
   static int _pageIndex = 0;
   PageController _controller = PageController(initialPage: 0, keepPage: true);
 
-  Widget appBarTiles(String title, double fontSize) {
+  Widget appBarTiles(int page, String title, double fontSize) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-      child: Text(
-            title, 
-            style: GoogleFonts.comfortaa(
-              color: Colors.white, 
-              fontSize: fontSize, 
-              fontWeight: FontWeight.bold,
-              shadows: <Shadow>[
-                Shadow(
-                  color: Colors.grey[600],
-                  blurRadius: 5.0,
-                  offset: Offset(2.0, 2.0)
-                )
-              ]
-            )
-          ),
+      child: InkWell(
+            onTap: () {_controller.animateToPage(page, duration: Duration(milliseconds: 500), curve: Curves.easeIn);},
+            child: Text(
+              title, 
+              style: GoogleFonts.comfortaa(
+                color: Colors.white, 
+                fontSize: fontSize, 
+                fontWeight: FontWeight.bold,
+                shadows: <Shadow>[
+                  Shadow(
+                    color: Colors.grey[600],
+                    blurRadius: 5.0,
+                    offset: Offset(2.0, 2.0)
+                  )
+                ]
+              )
+            ),
+      ),
     );
   }
 
@@ -50,15 +53,15 @@ class _HomeState extends State<Home> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  appBarTiles("A.D.S.", 60.0),
+                  appBarTiles(0, "A.D.S.", 60.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        appBarTiles("Home", 40.0),
-                        appBarTiles("About", 40.0),
-                        appBarTiles("Why us?", 40.0),
-                        appBarTiles("Team", 40.0),
-                        appBarTiles("Contact", 40.0),
+                        appBarTiles(0, "Home", 40.0),
+                        appBarTiles(1, "About", 40.0),
+                        appBarTiles(2, "Why us?", 40.0),
+                        appBarTiles(3, "Team", 40.0),
+                        appBarTiles(4, "Contact", 40.0),
                       ],
                     ),
                 ],
@@ -70,7 +73,7 @@ class _HomeState extends State<Home> {
       body: PageView(
         controller: _controller,
         scrollDirection: Axis.vertical,
-        pageSnapping: true,
+        pageSnapping: false,
         children: <Widget>[
           HomePage(),
           AboutPage(),

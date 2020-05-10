@@ -15,17 +15,24 @@ class _TeamPageState extends State<TeamPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  SizedBox(
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(150.0),
+                      border: Border.all(
+                        width: 5.0,
+                        color: Colors.tealAccent[400]
+                      )
+                    ),
                     height: 250.0,
                     width: 250.0,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(150.0),
-                      child: Image.network("https://picsum.photos/250?image=9", fit: BoxFit.cover,)
+                      child: Image.network(image, fit: BoxFit.cover,)
                     ),
                   ),
                   SizedBox(height: 20.0,),
-                  Text(name, style: GoogleFonts.raleway(fontSize: 30.0, fontWeight: FontWeight.bold),),
-                  Text(designation, style: GoogleFonts.raleway(fontSize: 18.0),),
+                  Text(name, style: GoogleFonts.raleway(fontSize: 30.0, fontWeight: FontWeight.bold, color: Colors.grey[800]),),
+                  Text(designation, style: GoogleFonts.raleway(fontSize: 18.0, color: Colors.grey[600]),),
                 ],
               ),
             );
@@ -50,12 +57,12 @@ class _TeamPageState extends State<TeamPage> {
               crossAxisCount: 3,
               primary: false,
               children: <Widget>[
-                teamTile("image", "Davindar Gupta", "Advocate"),
-                teamTile("image", "Aarti Garg", "Advocate"),
-                teamTile("image", "Dinkar Gupta", "Chartered Accountant"),
-                teamTile("image", "Sagar Jindal", "Marketing Professional"),
-                teamTile("image", "Sanjay Jindal", "Advisor"),
-                teamTile("image", "Vikas Garg", "Advisor"),
+                teamTile("https://i.pinimg.com/736x/f4/3b/7c/f43b7c577592a466279eaee43b8064f3.jpg", "Davindar Gupta", "Advocate"),
+                teamTile("https://i.pinimg.com/originals/37/f9/b8/37f9b89a8dce55eeed9c2e34801e8afd.jpg", "Aarti Garg", "Advocate"),
+                teamTile("https://im.indiatimes.in/photogallery/2013/Oct/2_1381415253.jpg", "Dinkar Gupta", "Chartered Accountant"),
+                teamTile("https://c.ndtvimg.com/2020-05/pub75bl8_virat-kohli-afp_625x300_03_May_20.jpg", "Sagar Jindal", "Marketing Professional"),
+                teamTile("https://i.pinimg.com/originals/cd/e4/98/cde498566b9096a02c9563d3d1fb5dfa.jpg", "Sanjay Jindal", "Advisor"),
+                teamTile("https://pbs.twimg.com/profile_images/1180491411172413440/AunoqDQW_400x400.jpg", "Vikas Garg", "Advisor"),
                 // Padding(
                 //   padding: EdgeInsets.all(200.0),
                 //   child: Column(
