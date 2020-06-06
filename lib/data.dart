@@ -52,12 +52,28 @@
       "height" : 100.0,
       "details" : "a lot of text here!"
     },
-    "GST Service" : {
+    "GST Registration" : {
       "height" : 100.0,
       "details" : "a hell lot of text here!"
     },
-    "Book Keeping Service" : {
+    "GST Accounting" : {
       "height" : 100.0,
-      "details" : "a shit lot of text here!"
+      "details" : "a lot of text here!"
+    },
+    "GST Return Filing" : {
+      "height" : 100.0,
+      "details" : "a lot of text here!"
+    },
+    "Income Tax Consultancy" : {
+      "height" : 100.0,
+      "details" : "a lot of text here!"
+    },
+    "Book Keeping" : {
+      "height" : 100.0,
+      "details" : "a lot of text here!"
+    },
+    "Company Registration" : {
+      "height" : 100.0,
+      "details" : "a lot of text here!"
     },
   };

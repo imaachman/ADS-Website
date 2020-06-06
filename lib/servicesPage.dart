@@ -29,7 +29,7 @@ class _ServicesPageState extends State<ServicesPage> {
             children: [
               Container(
                 width: 800.0,
-                height: 900.0,
+                // height: 900.0,
                 padding: const EdgeInsets.all(50.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +78,10 @@ class _ServicesPageState extends State<ServicesPage> {
                                       style: GoogleFonts.comfortaa(fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.grey[900]),
                                     ),
                                     IconButton(
-                                      icon: Icon(services[services.keys.toList()[index]]["height"] == 100.0 ? Icons.add_circle : Icons.do_not_disturb_on),
+                                      icon: Icon(
+                                        services[services.keys.toList()[index]]["height"] == 100.0 ? Icons.add_circle : Icons.do_not_disturb_on,
+                                        color: services[services.keys.toList()[index]]["height"] == 100.0 ? Colors.blue[200] : Colors.red[200],
+                                      ),
                                       onPressed: () {
                                         setState(() {
                                           services[services.keys.toList()[index]]["height"] == 100.0 
@@ -97,13 +100,16 @@ class _ServicesPageState extends State<ServicesPage> {
                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
                                     elevation: 8.0,
                                     child: Container(
-                                      height: 300.0,
+                                      //height: 300.0,
                                       width: 700.0,
                                       child: Center(
                                         child: SingleChildScrollView(
-                                          child: Text(
-                                            services[services.keys.toList()[index]]["details"],
-                                            style: GoogleFonts.comfortaa(fontSize: 18.0),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(20.0),
+                                            child: Text(
+                                              services[services.keys.toList()[index]]["details"],
+                                              style: GoogleFonts.comfortaa(fontSize: 18.0),
+                                            ),
                                           ),
                                         )
                                       ),

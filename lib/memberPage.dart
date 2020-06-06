@@ -14,6 +14,7 @@ class _MemberPageState extends State<MemberPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.0),
         child: NavBar(),
@@ -36,28 +37,34 @@ class _MemberPageState extends State<MemberPage> {
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
 
-                      Hero(
-                        tag: selectedMember["name"],
-                        child: AvatarGlow(
-                          endRadius: 200.0,
-                          glowColor: selectedMember["color"],
-                          duration: Duration(milliseconds: 2000),
-                          repeat: true,
-                          showTwoGlows: true,
-                          repeatPauseDuration: Duration(milliseconds: 100),
-                          child: Material(
-                            elevation: 8.0,
-                            borderRadius: BorderRadius.circular(150.0),
-                            child: Container(
-                              height: 250.0,
-                              width: 250.0,
-                              child: ClipRRect(
+                      Column(
+                        children: [
+                          Hero(
+                            tag: selectedMember["name"],
+                            child: AvatarGlow(
+                              endRadius: 200.0,
+                              glowColor: selectedMember["color"],
+                              duration: Duration(milliseconds: 2000),
+                              repeat: true,
+                              showTwoGlows: true,
+                              repeatPauseDuration: Duration(milliseconds: 100),
+                              child: Material(
+                                elevation: 8.0,
                                 borderRadius: BorderRadius.circular(150.0),
-                                child: Image.network(selectedMember["image"], fit: BoxFit.cover,)
+                                child: Container(
+                                  height: 250.0,
+                                  width: 250.0,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(150.0),
+                                    child: Image.network(selectedMember["image"], fit: BoxFit.cover,)
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-                        ),
+                          SizedBox(height: 30.0,),
+                          Text("mypersonalid@gmail.com", style: GoogleFonts.comfortaa(fontSize: 24.0, fontWeight: FontWeight.bold))
+                        ],
                       ),
 
                       Container(

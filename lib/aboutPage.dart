@@ -42,6 +42,7 @@ class _AboutPageState extends State<AboutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.0),
         child: NavBar(),
@@ -103,7 +104,7 @@ class _AboutPageState extends State<AboutPage> {
                       children: [
                         Container(
                           child: Image(
-                            image: AssetImage("servicesVector.png"),
+                            image: AssetImage("assets/servicesVector.png"),
                           ),
                         ),
                         Text("WIDE RANGE OF SERVICES", style: GoogleFonts.stardosStencil(fontSize: 24.0))
@@ -115,7 +116,7 @@ class _AboutPageState extends State<AboutPage> {
                       children: [
                         Container(
                           child: Image(
-                            image: AssetImage("teamVector.png"),
+                            image: AssetImage("assets/teamVector.png"),
                           ),
                         ),
                         Text("TEAM OF DEDICATED PROFESSIONALS", style: GoogleFonts.stardosStencil(fontSize: 24.0))
@@ -127,7 +128,7 @@ class _AboutPageState extends State<AboutPage> {
                       children: [
                         Container(
                           child: Image(
-                            image: AssetImage("techVector.png"),
+                            image: AssetImage("assets/techVector.png"),
                           ),
                         ),
                         Text("TECHNOLOGY DRIVEN SYSTEMS", style: GoogleFonts.stardosStencil(fontSize: 24.0))
@@ -139,7 +140,7 @@ class _AboutPageState extends State<AboutPage> {
                       children: [
                         Container(
                           child: Image(
-                            image: AssetImage("affordableVector.png"),
+                            image: AssetImage("assets/affordableVector.png"),
                           ),
                         ),
                         Text("FAST, RELIABLE, AFFORDABLE", style: GoogleFonts.stardosStencil(fontSize: 24.0))

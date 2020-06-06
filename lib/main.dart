@@ -4,6 +4,7 @@ import 'package:ads_website/homePage.dart';
 import 'package:ads_website/servicesPage.dart';
 import 'package:ads_website/teamPage.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
@@ -32,12 +33,33 @@ class MyApp extends StatelessWidget {
           background: Container(color: Color(0xFFF5F5F5))),
       //home: Home(),
       initialRoute: "/",
-      routes: {
-        "/" : (context) => HomePage(),
-        "/about" : (context) => AboutPage(),
-        "/services" : (context) => ServicesPage(),
-        "/team" : (context) => TeamPage(),
-        "/contact" : (context) => ContactPage()
+      // routes: {
+      //   "/" : (context) => HomePage(),
+      //   "/about" : (context) => AboutPage(),
+      //   "/services" : (context) => ServicesPage(),
+      //   "/team" : (context) => TeamPage(),
+      //   "/contact" : (context) => ContactPage()
+      // },
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case '/':
+            return PageTransition(child: HomePage(), type: PageTransitionType.fade);
+            break;
+          case '/about':
+            return PageTransition(child: AboutPage(), type: PageTransitionType.fade);
+            break;
+          case '/services':
+            return PageTransition(child: ServicesPage(), type: PageTransitionType.fade);
+            break;
+          case '/team':
+            return PageTransition(child: TeamPage(), type: PageTransitionType.fade);
+            break;
+          case '/contact':
+            return PageTransition(child: ContactPage(), type: PageTransitionType.fade);
+            break;
+          default:
+            return null;
+        }
       },
     );
   }

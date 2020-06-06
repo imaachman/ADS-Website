@@ -43,14 +43,15 @@ class _NavBarState extends State<NavBar> {
               padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
               child: RaisedButton(
                 elevation: 0.0,
-                hoverColor: Colors.white,
+                hoverColor: Colors.red[100],
                 hoverElevation: 0.0,
-                splashColor: Colors.tealAccent[100],
+                splashColor: Colors.red[300],
                 color: Colors.white,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
                 onPressed: () {Navigator.pushNamed(context, "/");},
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Image(image: AssetImage("ADSLogo.png"),),
+                  child: Image(image: AssetImage("assets/ADSLogo.png"),),
                 )
               ),
             ),

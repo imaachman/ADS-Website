@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
               Container(
                 padding: const EdgeInsets.all(50.0),
                 child: Image(
-                  image: AssetImage("ADSLogoWithTag.png"),
+                  image: AssetImage("assets/ADSLogoWithTag.png"),
                 ),
               ),
                 AnimationLimiter(
@@ -71,8 +71,8 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Expanded(child: Container()),
                                   RotateAnimatedTextKit(
-                                    text: ["Accounting", "Book Keeping", "IT Return Filing"],
-                                    textStyle: GoogleFonts.comfortaa(fontSize: 76.0, fontWeight: FontWeight.bold),
+                                    text: ["Accounting", "GST", "ITR", "Taxation", "PAN Card", "Consulting"],
+                                    textStyle: GoogleFonts.comfortaa(fontSize: 56.0, fontWeight: FontWeight.bold),
                                     repeatForever: true,
                                   ),
                                   Expanded(child: Container()),
@@ -81,16 +81,19 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                         ),
-                        RaisedButton(
-                          color: Colors.blue[100],
-                          hoverColor: Colors.blue[300],
-                          elevation: 0.0,
-                          hoverElevation: 0.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25.0),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 50.0),
+                          child: RaisedButton(
+                            color: Colors.blue[100],
+                            hoverColor: Colors.blue[300],
+                            elevation: 0.0,
+                            hoverElevation: 0.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            child: Text("Get Started", style: GoogleFonts.raleway(fontSize: 16.0, fontWeight: FontWeight.bold),),
+                            onPressed: () {Navigator.pushNamed(context, "/about");},
                           ),
-                          child: Text("Get Started", style: GoogleFonts.raleway(fontSize: 16.0, fontWeight: FontWeight.bold),),
-                          onPressed: () {Navigator.pushNamed(context, "/about");},
                         )
                       ]
                     )
