@@ -33,14 +33,17 @@ class _ContactPageState extends State<ContactPage> {
         (String response) {
           print(response);
           if (response == FormController.STATUS_SUCCESS) {
-            Scaffold.of(context).showSnackBar(SnackBar(content: Text("Form submitted!"), backgroundColor: Colors.red[400],));
+            _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("Form submitted!"), backgroundColor: Colors.blue[400],));
+            //Scaffold.of(context).showSnackBar(SnackBar(content: Text("Form submitted!"), backgroundColor: Colors.red[400],));
           }else{
-            Scaffold.of(context).showSnackBar(SnackBar(content: Text("Could not submit form :("), backgroundColor: Colors.red[400],));
+            _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("Could not submit form :("), backgroundColor: Colors.red[400],));
+            //Scaffold.of(context).showSnackBar(SnackBar(content: Text("Could not submit form :("), backgroundColor: Colors.red[400],));
           }
         }
       );
 
-      Scaffold.of(context).showSnackBar(SnackBar(content: Text("Submitting form..."), backgroundColor: Colors.red[400],));
+      _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("Submitting form..."), backgroundColor: Colors.red[400],));
+      //Scaffold.of(context).showSnackBar(SnackBar(content: Text("Submitting form..."), backgroundColor: Colors.red[400],));
       formController.submitForm(contactForm);
     }
   }
@@ -73,16 +76,17 @@ class _ContactPageState extends State<ContactPage> {
   }
 
   _launchURL(String _url) async {
-  if (await canLaunch(_url)) {
-    await launch(_url);
-  } else {
-    throw 'Could not launch $_url';
+    if (await canLaunch(_url)) {
+      await launch(_url);
+    } else {
+      throw 'Could not launch $_url';
+    }
   }
-}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.0),
