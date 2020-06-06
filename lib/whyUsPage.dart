@@ -25,10 +25,11 @@ class _WhyUsPageState extends State<WhyUsPage> {
 
          Center(
            child: Container(
-             height:MediaQuery.of(context).size.height / 2.5,
+             //height:MediaQuery.of(context).size.height / 2.5,
              width: MediaQuery.of(context).size.width * 2/3,
-             child: Row(
-               mainAxisAlignment: MainAxisAlignment.spaceAround,
+             child: Wrap(
+               //mainAxisAlignment: MainAxisAlignment.spaceAround,
+               alignment: WrapAlignment.center,
                 children: <Widget>[
                   Column(
                     children: <Widget>[
@@ -39,7 +40,7 @@ class _WhyUsPageState extends State<WhyUsPage> {
                           borderRadius: BorderRadius.circular(150.0),
                           border: Border.all(
                             width: 5.0,
-                            color: Colors.tealAccent[400]
+                            color: Colors.blue[400]
                           )
                         ),
                         child: ClipRRect(borderRadius: BorderRadius.circular(150.0), child: Image(image: NetworkImage("https://image.freepik.com/free-vector/portfolio-concept-illustration_114360-200.jpg"),)),
@@ -57,7 +58,7 @@ class _WhyUsPageState extends State<WhyUsPage> {
                           borderRadius: BorderRadius.circular(150.0),
                           border: Border.all(
                             width: 5.0,
-                            color: Colors.tealAccent[400]
+                            color: Colors.blue[400]
                           )
                         ),
                         child: ClipRRect(borderRadius: BorderRadius.circular(150.0), child: Image(image: NetworkImage("https://image.freepik.com/free-vector/group-business-people-avatar-character_24877-57314.jpg"),)),
@@ -75,7 +76,7 @@ class _WhyUsPageState extends State<WhyUsPage> {
                           borderRadius: BorderRadius.circular(150.0),
                           border: Border.all(
                             width: 5.0,
-                            color: Colors.tealAccent[400]
+                            color: Colors.blue[400]
                           )
                         ),
                         child: ClipRRect(borderRadius: BorderRadius.circular(150.0), child: Image(image: NetworkImage("https://image.freepik.com/free-vector/illustration-hand-holding-golden-dollar-symbol_24381-624.jpg"),)),
